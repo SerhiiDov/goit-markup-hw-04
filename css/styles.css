@@ -1,5 +1,4 @@
 .container {
-  width: 1440px;
   align-content: center;
   margin: 0 auto;
 }
@@ -30,15 +29,11 @@ img {
   width: 1158px;
   padding: 0 15px;
   display: flex;
-}
-
-.main-navigation {
-  margin: 0;
-  display: flex;
-  align-items: center;
+  align-items: baseline;
 }
 
 .header-logo {
+  display: block;
   padding: 24px 0;
   margin-right: 76px;
   font-family: "Raleway", sans-serif;
@@ -56,12 +51,17 @@ img {
   color: #2e2f42;
 }
 
+.main-navigation {
+  margin-right: 332px;
+}
+
 .header-navigation-list {
   display: flex;
   gap: 40px;
 }
 
 .link {
+  display: block;
   margin: 0;
   padding: 24px 0;
   text-decoration: none;
@@ -69,31 +69,48 @@ img {
   color: #2e2f42;
 }
 
-.header-navigation-list-item {
+.header-navigation-list-item .link {
+  position: relative;
   line-height: 150%;
   letter-spacing: 0.02em;
   font-weight: 500;
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.header-navigation-list a:hover,
-.header-navigation-list a:focus {
+.header-navigation-list-item .link:hover,
+.header-navigation-list-item .link:focus {
   color: #404bbf;
+}
+
+.header-navigation-list-item .link:active::after {
+  position: absolute;
+  left: 0;
+  bottom: 4px;
+  content: "";
+  border-radius: 2px;
+  width: 48px;
+  height: 4px;
+  background: #404bbf;
 }
 
 .header-address-list {
   display: flex;
-  margin-left: 332px;
   gap: 40px;
 }
 
-.header-address-list a {
+.header-address-list-item .link {
   line-height: 150%;
   letter-spacing: 0.02em;
   color: #434455;
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.header-address-list a:hover,
-.header-address-list a:focus {
+.header-address-list-item .link:hover,
+.header-address-list-item .link:focus {
   color: #404bbf;
 }
 
@@ -101,6 +118,15 @@ img {
   padding: 188px 0;
   display: flex;
   background-color: #2e2f42;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(46, 47, 66, 0.7),
+      rgba(46, 47, 66, 0.7)
+    ),
+    url("/images/people-office.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
 }
 
 .baner-title {
@@ -131,6 +157,9 @@ img {
   cursor: pointer;
   margin: auto;
   color: #fff;
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .baner-order-button:hover,
@@ -140,6 +169,13 @@ img {
 
 .advantages {
   padding: 120px 0;
+}
+
+.advantages .container {
+  margin: 0 auto;
+  width: 1158px;
+  padding: 0 15px;
+  display: flex;
 }
 
 .visually-hidden {
@@ -156,6 +192,16 @@ img {
   overflow: hidden;
 }
 
+.icon-advantages-wrapper {
+  display: flex;
+  justify-content: center;
+  border: 1px solid #8e8f99;
+  border-radius: 4px;
+  padding: 24px 100px;
+  background: #f4f4fd;
+  margin-bottom: 8px;
+}
+
 .advantages-list {
   display: flex;
   gap: 24px;
@@ -168,10 +214,18 @@ img {
 .advantages-list-item-title {
   margin: 0;
   margin-bottom: 8px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 120%;
+  letter-spacing: 0.02em;
+  color: #2e2f42;
 }
 
 .advantages-list-item-text {
   margin: 0;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
   font-size: 16px;
   line-height: 150%;
   letter-spacing: 0.02em;
@@ -183,6 +237,12 @@ img {
   background-color: #f4f4fd;
 }
 
+.our-team .container {
+  margin: 0 auto;
+  width: 1158px;
+  padding: 0 15px;
+}
+
 .our-team-list {
   display: flex;
   gap: 24px;
@@ -190,7 +250,6 @@ img {
 
 .our-team-list-item {
   width: calc((100% - 3 * 24px) / 4);
-  padding-bottom: 32px;
   border-radius: 0 0 4px 4px;
   box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
     0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
@@ -202,33 +261,68 @@ img {
   margin: auto;
 }
 
-.our-team-list-item-wrapped {
+.our-team-list-item-wrapper {
   padding: 32px 0;
 }
 
 .our-team-list-item-title {
   margin: 0;
   margin-bottom: 8px;
+  font-family: "Roboto", sans-serif;
   font-weight: 500;
   font-size: 20px;
   line-height: 120%;
   letter-spacing: 0.02em;
-  color: #2e2f42;
   text-align: center;
+  color: #2e2f42;
 }
 
 .our-team-list-item-text {
   margin: 0;
+  margin-bottom: 8px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
   font-size: 16px;
   line-height: 150%;
   letter-spacing: 0.02em;
-  color: #434455;
   text-align: center;
+  color: #434455;
+}
+
+.our-team-list-item-sociallink-container {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+}
+
+.icon-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #4d5ae5;
+  cursor: pointer;
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.icon-box:hover,
+.icon-box:focus {
+  background-color: #404bbf;
 }
 
 .portfolio {
   padding-top: 120px;
   padding-bottom: 120px;
+}
+
+.portfolio .container {
+  margin: 0 auto;
+  width: 1158px;
+  padding: 0 15px;
 }
 
 .portfolio-list {
@@ -242,6 +336,46 @@ img {
   width: calc((100% - 48px) / 3);
 }
 
+.portfolio-list-item:hover {
+  box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
+    0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
+  background: #fff;
+}
+
+.overlay-box {
+  position: relative;
+  overflow: hidden;
+}
+
+.overlay-box:hover .overlay {
+  transform: translateY(0);
+}
+
+.overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateY(100%);
+  transition: transform 250ms ease-in-out;
+  padding-top: 40px;
+  padding-right: 32px;
+  padding-left: 32px;
+  background-color: #4d5ae5;
+  color: #fff;
+}
+
+.overlay-text {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.02em;
+  color: #f4f4fd;
+}
+
 .portfolio-list-item-wrapper {
   margin: 0;
   border-bottom: 1px solid #e7e9fc;
@@ -253,10 +387,22 @@ img {
 .portfolio-list-item-title {
   margin: 0;
   margin-bottom: 8px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 120%;
+  letter-spacing: 0.02em;
+  color: #2e2f42;
 }
 
 .portfolio-list-item-text {
   margin: 0;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.02em;
+  color: #434455;
 }
 
 .our-team-title,
@@ -278,11 +424,16 @@ img {
 }
 
 footer .container {
+  display: flex;
   margin: 0 auto;
   width: 1158px;
   padding: 0 15px;
   color: #f4f4fd;
   background-color: #2e2f42;
+}
+
+.footer-logo-wrapper {
+  margin-right: 120px;
 }
 
 .footer-logo {
@@ -305,7 +456,46 @@ footer .container {
 .footer-text {
   margin: 0;
   max-width: 264px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
   line-height: 150%;
   letter-spacing: 0.02em;
   color: #f4f4fd;
+}
+
+.footer-text-social-media {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.02em;
+  color: #fff;
+  margin-bottom: 16px;
+}
+
+.footer-list-item-sociallink-container {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+.footer-icon-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #4d5ae5;
+  cursor: pointer;
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-icon-box:hover,
+.footer-icon-box:focus {
+  background-color: #31d0aa;
 }
