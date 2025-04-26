@@ -59,7 +59,7 @@ img {
 .main-navigation {
   display: flex;
   align-items: center;
-  margin-right: 332px;
+  margin-right: auto;
 }
 
 .header-navigation-list {
@@ -230,7 +230,6 @@ img {
   height: 112px;
   border: 1px solid #8e8f99;
   border-radius: 4px;
-  padding: 24px 100px;
   background: #f4f4fd;
   margin-bottom: 8px;
 }
