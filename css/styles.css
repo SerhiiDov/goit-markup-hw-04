@@ -280,7 +280,7 @@ img {
 
 .our-team-title {
   margin: 0;
-  margin-bottom: 40px;
+  margin-bottom: 72px;
   font-weight: 700;
   font-size: 36px;
   line-height: 111%;
@@ -311,7 +311,6 @@ img {
 .our-team-image {
   border-radius: 0px 0px 4px 4px;
   margin: 0;
-  margin-bottom: 32px;
 }
 
 .our-team-list-item-title {
