@@ -59,10 +59,10 @@ img {
 .main-navigation {
   display: flex;
   align-items: center;
+  margin-right: 332px;
 }
 
 .header-navigation-list {
-  margin-right: 332px;
   display: flex;
   gap: 40px;
 }
@@ -369,7 +369,7 @@ img {
 }
 
 .our-team-icon-list-item .link:hover,
-.our-team-icon-list-item .link:active {
+.our-team-icon-list-item .link:focus {
   background-color: #404bbf;
 }
 
